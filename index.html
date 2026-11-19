@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="Une invitation à célébrer une soirée inoubliable.">
+  <title>Une soirée d’exception — Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #121212;
+      --black-soft: #1b1a18;
+      --cream: #FAF7F2;
+      --cream-dark: #f0ebe2;
+      --gold: #D4AF37;
+      --gold-muted: #b99847;
+      --ink: #24221e;
+      --muted: #777168;
+      --line: rgba(212, 175, 55, .35);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      position: absolute;
+      z-index: 3;
+      inset: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 27px 7%;
+      color: var(--cream);
+    }
+
+    .monogram {
+      color: var(--gold);
+      font: 400 22px var(--serif);
+      letter-spacing: .12em;
+      text-decoration: none;
+    }
+
+    .site-nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    .site-nav a {
+      color: var(--cream);
+      font-size: 10px;
+      letter-spacing: .17em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .site-nav a:hover { color: var(--gold); }
+
+    .hero {
+      min-height: 760px;
+      height: 96svh;
+      max-height: 980px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--cream);
+      background:
+        linear-gradient(90deg, rgba(18,18,18,.83), rgba(18,18,18,.48)),
+        url("birth4.jpg")
+        center 53% / cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid var(--line);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(800px, 88%);
+      padding: 95px 20px 55px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow { color: var(--gold); }
+
+    .hero h1 {
+      margin: 27px 0 18px;
+      font: 400 clamp(58px, 11vw, 118px)/.98 var(--serif);
+      letter-spacing: -.045em;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-bottom: 12px;
+      font-size: .36em;
+      font-style: italic;
+      letter-spacing: .02em;
+    }
+
+    .hero-subtitle {
+      margin: 25px 0 31px;
+      color: rgba(250,247,242,.82);
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .hero-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--cream);
+      font: 400 17px var(--serif);
+      letter-spacing: .08em;
+    }
+
+    .hero-date span { color: var(--gold); }
+
+    .button {
+      display: inline-flex;
+      min-height: 49px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 25px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--black);
+      font: 700 10px var(--sans);
+      letter-spacing: .16em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .2s, color .2s, transform .2s;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .button-outline {
+      margin-top: 34px;
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .button-outline:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .section {
+      padding: 100px 7%;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro .eyebrow,
+    .section-heading .eyebrow,
+    .rsvp-copy .eyebrow {
+      color: var(--gold-muted);
+    }
+
+    h2 {
+      margin: 17px 0 19px;
+      font: 400 clamp(39px, 5vw, 59px)/1.12 var(--serif);
+      letter-spacing: -.025em;
+    }
+
+    .intro p:last-of-type {
+      max-width: 580px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .ornament {
+      margin-top: 26px;
+      color: var(--gold-muted);
+      font-size: 17px;
+      letter-spacing: .5em;
+    }
+
+    .details {
+      color: var(--cream);
+      background: var(--black);
+    }
+
+    .section-heading {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .details h2 { color: var(--cream); }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1100px;
+      margin: auto;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-card {
+      padding: 39px 24px 43px;
+      text-align: center;
+    }
+
+    .detail-card + .detail-card {
+      border-left: 1px solid var(--line);
+    }
+
+    .detail-icon {
+      margin-bottom: 17px;
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+    .detail-card h3 {
+      margin: 0 0 12px;
+      color: var(--cream);
+      font: 400 25px var(--serif);
+    }
+
+    .detail-card p {
+      margin: 0;
+      color: rgba(250,247,242,.67);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 11px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .map-link:hover { text-decoration: underline; }
+
+    .schedule {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .schedule-row {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 25px;
+      padding: 24px 0;
+      border-bottom: 1px solid #e4ded4;
+    }
+
+    .schedule-row:first-child { border-top: 1px solid #e4ded4; }
+
+    .schedule-time {
+      color: var(--gold-muted);
+      font: 400 18px var(--serif);
+    }
+
+    .schedule-row h3 {
+      margin: 0 0 7px;
+      font: 400 22px var(--serif);
+    }
+
+    .schedule-row p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .countdown-section {
+      padding: 72px 7%;
+      color: var(--cream);
+      background: var(--black-soft);
+      text-align: center;
+    }
+
+    .countdown-section .eyebrow { color: var(--gold); }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: clamp(25px, 7vw, 78px);
+      margin-top: 30px;
+    }
+
+    .countdown-item strong {
+      display: block;
+      color: var(--gold);
+      font: 400 clamp(35px, 6vw, 56px) var(--serif);
+    }
+
+    .countdown-item span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(250,247,242,.67);
+      font-size: 9px;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .rsvp {
+      background: var(--cream-dark);
+    }
+
+    .rsvp-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 9%;
+      max-width: 1050px;
+      margin: auto;
+      align-items: start;
+    }
+
+    .rsvp-copy h2 { margin-top: 17px; }
+
+    .rsvp-copy p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    form { display: grid; gap: 17px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      min-height: 47px;
+      padding: 12px 13px;
+      border: 1px solid #ddd4c6;
+      border-radius: 0;
+      outline: none;
+      background: var(--cream);
+      color: var(--ink);
+      font: 13px var(--sans);
+    }
+
+    textarea {
+      min-height: 88px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold-muted);
+    }
+
+    .form-note, .form-message {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .form-message { color: #435b42; }
+
+    .footer {
+      padding: 32px 7%;
+      color: rgba(250,247,242,.65);
+      background: var(--black);
+      text-align: center;
+    }
+
+    .footer .monogram {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 10px;
+      letter-spacing: .1em;
+    }
+
+    @media (max-width: 700px) {
+      .site-header { padding: 22px 7%; }
+      .site-nav { gap: 15px; }
+      .site-nav a { font-size: 9px; }
+      .hero { min-height: 650px; height: 90svh; }
+      .hero::after { inset: 10px; }
+      .section { padding: 76px 7%; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .detail-card { padding: 29px 18px; }
+      .detail-card + .detail-card {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+      .rsvp-layout { grid-template-columns: 1fr; gap: 28px; }
+      .schedule-row { grid-template-columns: 78px 1fr; gap: 15px; }
+    }
+
+    @media (max-width: 430px) {
+      .site-nav { gap: 11px; }
+      .site-nav a { letter-spacing: .1em; }
+      .hero-date { gap: 9px; font-size: 14px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="monogram" href="#" aria-label="Retour en haut">N · 25</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="#details">La soirée</a>
+      <a href="#programme">Programme</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Une invitation exclusive</p>
+        <h1><span>Les 25 ans de</span>Nabou</h1>
+        <p class="hero-subtitle">Une soirée élégante · des instants précieux</p>
+        <div class="hero-date">
+          <span>✦</span> Samedi 20 juin 2027 <span>✦</span>
+        </div>
+        <br>
+        <a class="button button-outline" href="#rsvp">Confirmer ma présence</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="intro">
+        <p class="eyebrow">Une occasion particulière</p>
+        <h2>Une soirée à la hauteur<br><em>des beaux moments.</em></h2>
+        <p>
+          Pour célébrer ce nouveau chapitre, je serais heureuse de t’accueillir
+          le temps d’une soirée pensée dans les moindres détails : un dîner,
+          quelques surprises et surtout le plaisir d’être ensemble.
+        </p>
+        <div class="ornament" aria-hidden="true">✦ &nbsp; ✧ &nbsp; ✦</div>
+      </div>
+    </section>
+
+    <section class="section details" id="details">
+      <div class="section-heading">
+        <p class="eyebrow">Les informations essentielles</p>
+        <h2>La soirée</h2>
+      </div>
+
+      <div class="detail-grid">
+        <article class="detail-card">
+          <div class="detail-icon" aria-hidden="true">✧</div>
+          <h3>La date</h3>
+          <p>Samedi 20 juin 2027<br>À partir de 19 h 00</p>
+        </article>
+
+        <article class="detail-card">
+          <div class="detail-icon" aria-hidden="true">⌖</div>
+          <h3>Le lieu</h3>
+          <p>Liberté 2<br>Près de la mosquée, Dakar</p>
+          <a class="map-link" href="https://maps.google.com/?q=Liberté+2+Dakar" target="_blank" rel="noreferrer">Voir l’itinéraire ↗</a>
+        </article>
+
+        <article class="detail-card">
+          <div class="detail-icon" aria-hidden="true">❋</div>
+          <h3>La tenue</h3>
+          <p>Tenue de soirée élégante<br>Une touche dorée si le cœur t’en dit</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="programme">
+      <div class="section-heading">
+        <p class="eyebrow">Une soirée en trois temps</p>
+        <h2>Le programme</h2>
+      </div>
+
+      <div class="schedule">
+        <article class="schedule-row">
+          <div class="schedule-time">19 h 00</div>
+          <div>
+            <h3>Accueil & cocktail</h3>
+            <p>Un verre, quelques bouchées et le plaisir de se retrouver.</p>
+          </div>
+        </article>
+        <article class="schedule-row">
+          <div class="schedule-time">20 h 30</div>
+          <div>
+            <h3>Dîner de célébration</h3>
+            <p>Un menu imaginé pour l’occasion, servi dans une ambiance chaleureuse.</p>
+          </div>
+        </article>
+        <article class="schedule-row">
+          <div class="schedule-time">22 h 00</div>
+          <div>
+            <h3>Gâteau & soirée</h3>
+            <p>Les bougies, la musique et la fête qui se prolonge.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="countdown-section">
+      <p class="eyebrow">Plus que quelques instants</p>
+      <div class="countdown" aria-label="Compte à rebours avant la fête">
+        <div class="countdown-item"><strong id="days">—</strong><span>Jours</span></div>
+        <div class="countdown-item"><strong id="hours">—</strong><span>Heures</span></div>
+        <div class="countdown-item"><strong id="minutes">—</strong><span>Minutes</span></div>
+        <div class="countdown-item"><strong id="seconds">—</strong><span>Secondes</span></div>
+      </div>
+    </section>
+
+    <section class="section rsvp" id="rsvp">
+      <div class="rsvp-layout">
+        <div class="rsvp-copy">
+          <p class="eyebrow">Votre réponse, s’il vous plaît</p>
+          <h2>Seras-tu<br><em>des nôtres ?</em></h2>
+          <p>
+            Merci de répondre avant le 1er juin. Ta réponse ouvrira WhatsApp
+            avec un message prêt à envoyer.
+          </p>
+        </div>
+
+        <form id="rsvp-form">
+          <div>
+            <label for="name">Ton nom</label>
+            <input id="name" name="name" type="text" placeholder="Prénom et nom" required>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="attendance">Ta réponse</label>
+              <select id="attendance" name="attendance" required>
+                <option value="">Choisir une réponse</option>
+                <option value="Oui, avec plaisir !">Oui, avec plaisir !</option>
+                <option value="Désolé·e, je ne pourrai pas">Désolé·e, je ne pourrai pas</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="guests">Nombre de personnes</label>
+              <select id="guests" name="guests">
+                <option value="1">1 personne</option>
+                <option value="2">2 personnes</option>
+                <option value="3">3 personnes</option>
+                <option value="4">4 personnes</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="diet">Allergies ou préférences alimentaires</label>
+            <textarea id="diet" name="diet" placeholder="À préciser si nécessaire"></textarea>
+          </div>
+
+          <button class="button" type="submit">Répondre sur WhatsApp</button>
+          <p class="form-note">WhatsApp s’ouvrira avec ta réponse prête à envoyer.</p>
+          <p class="form-message" id="form-message" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="monogram" href="#">N · 30</a>
+    <p>Au plaisir de célébrer cette soirée avec toi ✦</p>
+   <br> <p>Réalisée par PrêtA.✦</p>
+  </footer>
+
+  <script>
+    // Remplace par ton numéro WhatsApp international, sans + ni espaces.
+    const WHATSAPP_NUMBER = "33612345678";
+
+    // Modifie cette date si tu changes la date ou l'heure de la fête.
+    const partyDate = new Date("2027-06-20T19:00:00+02:00");
+
+    function updateCountdown() {
+      const remaining = partyDate.getTime() - Date.now();
+
+      if (remaining <= 0) {
+        document.querySelector(".countdown").textContent = "La soirée a commencé !";
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(remaining / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").textContent =
+        Math.floor((remaining / (1000 * 60 * 60)) % 24);
+      document.getElementById("minutes").textContent =
+        Math.floor((remaining / (1000 * 60)) % 60);
+      document.getElementById("seconds").textContent =
+        Math.floor((remaining / 1000) % 60);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    document.getElementById("rsvp-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const form = new FormData(event.currentTarget);
+      const name = form.get("name");
+      const attendance = form.get("attendance");
+      const guests = form.get("guests");
+      const diet = form.get("diet") || "Aucune précision";
+
+      const message =
+        "Bonjour Camille ! Voici ma réponse à ton invitation ✨\n\n" +
+        "Nom : " + name + "\n" +
+        "Réponse : " + attendance + "\n" +
+        "Nombre de personnes : " + guests + "\n" +
+        "Allergies ou préférences : " + diet + "\n\n" +
+        "À bientôt !";
+
+      document.getElementById("form-message").textContent =
+        "WhatsApp va s’ouvrir avec ta réponse prête à envoyer.";
+
+      const url =
+        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
